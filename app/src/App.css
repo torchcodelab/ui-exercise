@@ -1,28 +1,31 @@
-.App {
-  text-align: center;
+/* Utility Classes */
+.u-left {
+    float: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.u-right {
+    float: right;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* Start global app styles */
+.wrapper {
+    padding: 1rem 2rem;
+    position: relative;
+    margin: 0 auto;
+    max-width: 90rem;
+    width: 100%;
 }
 
-.App-title {
-  font-size: 1.5em;
+.icon {
+    overflow: hidden;
 }
 
-.App-intro {
-  font-size: large;
+.icon svg {
+    fill: var(--primary-grayscale);
+    height: 100%;
+    width: auto;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.icon svg {
+    transition: all 90ms ease-in;
 }
