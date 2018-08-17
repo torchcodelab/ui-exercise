@@ -1,4 +1,4 @@
-import { emailAPI } from './config.js';
+import { emailAPI, tagsAPI } from './config.js';
 
 const fetchSettings = {
     method: "GET",
@@ -7,8 +7,8 @@ const fetchSettings = {
     }
 };
 
-export const getEmail = () => {
-    return fetch(new Request(emailAPI, fetchSettings))
+const doFetch = (url) => {
+    return fetch(new Request(url, fetchSettings))
         .then(response => {
             if (response.status >= 400) {
                 throw new Error("Bad response from server");
@@ -18,4 +18,12 @@ export const getEmail = () => {
         .then(data => {
             return data;
         });
+};
+
+export const getEmail = () => {
+    return doFetch(emailAPI);
+};
+
+export const getTags = () => {
+    return doFetch(tagsAPI)
 };

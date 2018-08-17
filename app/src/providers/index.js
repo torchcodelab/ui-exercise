@@ -1,3 +1,4 @@
-import { getEmail } from "./email";
+import { getEmail } from "./emailMock";
+import { getTags } from "./emailMock";
 
-export { getEmail };
+export { getEmail, getTags };

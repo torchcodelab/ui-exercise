@@ -1,0 +1,8 @@
+footer {
+    border-top: solid 1px var(--border-default);
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    margin: 0.5rem auto;
+}
