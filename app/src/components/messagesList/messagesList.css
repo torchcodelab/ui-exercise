@@ -28,7 +28,7 @@
 }
 
 .message__details time {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
 }
 
 .message__subject {
@@ -70,6 +70,14 @@
 
 
 @media screen and (min-width: 40rem) {
+    .message__details .sender {
+        font-size: 1.2rem;
+    }
+
+    .message__details time {
+        font-size: 1rem;
+    }
+    
     .message__intro {
         flex-basis: calc(100% - 18rem);
         line-height: 1.2;
