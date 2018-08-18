@@ -11,7 +11,9 @@ class App extends Component {
     return (
       <div className="App">
           <Header/>
-          <MessagesList/>
+          <main>
+            <MessagesList/>
+          </main>
           <Footer/>
       </div>
     );

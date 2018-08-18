@@ -8,6 +8,19 @@
 }
 
 /* Start global app styles */
+
+header,
+footer,
+section,
+main {
+    display: block;
+    width: 100%;
+}
+
+main {
+    height: 100vh;
+}
+
 .wrapper {
     padding: 1rem;
     position: relative;
