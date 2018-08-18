@@ -10,6 +10,7 @@ export default class Footer extends Component {
         return (
             <footer>
                 <div className="wrapper">
+                    <p>Built with React v{React.version}</p>
                     <p className="disclaimer">
                         Email icon by Dinosoft Labs from the Noun Project
                     </p>
