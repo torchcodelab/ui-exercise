@@ -37,10 +37,13 @@ Uhm, maybe? Check the `git log`, I'm probably forgetting something, but it's lik
 * To install the app: 
     * clone this repo
     * switch to the `develop` branch
+    * `cd app/`
     * `yarn install`
 * To run app: 
+    * `cd app/`
     * `yarn run`
-* To run the Message Component test: 
+* To run the Message Component test:
+    * `cd app/`
     * `yarn test message.test.jsx`
 * To view it online:
     * http://torchcodelab.com/ui-exercise/
