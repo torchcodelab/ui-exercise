@@ -5,7 +5,6 @@ import { getEmail } from "../../providers"
 
 import './messagesList.css'
 import Message from "../message"
-import Modal from "../modal"
 
 const MessageSnippet = (body) => {
     const messageStripped = body.message.replace(/(<([^>]+)>)/ig,"");
@@ -24,7 +23,7 @@ export default class MessagesList extends Component {
         this.state = {
             messages: [],
             messageBody: '',
-            isOpen: false
+            showMessage: false,
         };
     }
 
@@ -40,28 +39,30 @@ export default class MessagesList extends Component {
         console.log(newProps);
     }
 
-    toggleMessageModal = () => {
+    toggleMessageView = (index) => {
+        const expandedState = [...this.state.showMessage];
+        expandedState[index] = !this.state.showMessage[index];
+
         this.setState({
-            isOpen: !this.state.isOpen
+            showMessage: expandedState
         });
     };
 
     render() {
-        const { messages, isOpen} = this.state;
+        const { messages, showMessage} = this.state;
         return (
-            <div className="messages wrapper">
-
-                <ul className="messages__list">
-                    {messages.length >= 1 && messages.map((message, index) =>
-                        <li className="message" key={index} onClick={this.toggleMessageModal}>
-                            <Modal
-                                show={isOpen}
-                                delay={null}
-                            >
-                                <Message
-                                    message={message.body}
-                                />
-                            </Modal>
+            <ul className="messages__list">
+                {messages.length >= 1 && messages.map((message, index) =>
+                    <li className="message" key={index}>
+                        <a className="message__trigger--close icon" onClick={() => this.toggleMessageView(index)}>
+                        {showMessage[index] &&
+                            <svg width="256" height="256" viewBox="0 0 256 256"><title>Close Message</title><path d="M137.051 128l75.475-75.475c2.5-2.5 2.5-6.551 0-9.051s-6.551-2.5-9.051 0L128 118.949 52.525 43.475c-2.5-2.5-6.551-2.5-9.051 0s-2.5 6.551 0 9.051L118.949 128l-75.475 75.475a6.399 6.399 0 0 0 4.525 10.926 6.38 6.38 0 0 0 4.525-1.875L128 137.051l75.475 75.475c1.25 1.25 2.888 1.875 4.525 1.875s3.275-.625 4.525-1.875c2.5-2.5 2.5-6.551 0-9.051L137.051 128z"/></svg>
+                        }
+                        {!showMessage[index] &&
+                            <svg width="32" height="32" viewBox="0 0 32 32"><title>Expand Message</title><path fill="#121313" d="M24.285 11.284L16 19.571l-8.285-8.288a1.01 1.01 0 1 0-1.429 1.43l8.999 9.002a1.009 1.009 0 0 0 1.428 0l8.999-9.002a1.01 1.01 0 1 0-1.427-1.429z"/></svg>
+                        }
+                        </a>
+                        <a className="message__trigger" onClick={() => this.toggleMessageView(index)}>
                             <div className="message__details">
                                 <span className="sender">{message.sender}</span>
                                 <Moment format="h:mm A M/D/YYYY">{message.date}</Moment>
@@ -69,7 +70,14 @@ export default class MessagesList extends Component {
                             <p className="message__subject">
                                 {message.subject}
                             </p>
-                            <MessageSnippet message={message.body}/>
+                            {!showMessage[index] &&
+                                <MessageSnippet message={message.body}/>
+                            }
+                            {showMessage[index] &&
+                                <Message
+                                    message={message.body}
+                                />
+                            }
                             {message.tags.length >= 1 &&
                                 <ul className="message__tags">
                                     {message.tags.map((tag, index) =>
@@ -77,10 +85,10 @@ export default class MessagesList extends Component {
                                     )}
                                 </ul>
                             }
-                        </li>
-                    )}
-                </ul>
-            </div>
+                        </a>
+                    </li>
+                )}
+            </ul>
         )
     }
 }

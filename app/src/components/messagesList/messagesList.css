@@ -1,16 +1,59 @@
+.messages__list {
+    max-width: 75rem;
+    padding: 1rem 0.5rem;
+}
+
 .messages__list,
 .message__tags {
     list-style: none;
     margin: 0 auto;
+}
+
+.message__tags {
     padding: 0;
 }
 
 .message {
-    border-bottom: solid 1px var(--border-default);
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.message__trigger {
+    background-color: var(--tertiary-grayscale);
+    border-bottom: solid 1px var(--secondary-text-color);
+    border-left: solid 1px transparent;
+    border-right: solid 1px transparent;
+    border-top: solid 1px transparent;
+    border-radius: 3px;
     display: flex;
     flex-wrap: wrap;
-    margin: 0.5rem 0;
-    padding: 0.5rem 0;
+    margin: 0.25rem 0;
+    min-height: 6rem;
+    padding: 1rem;
+    transition: all 90ms ease-in;
+    width: 100%;
+}
+
+.message__trigger:hover,
+.message__trigger:focus {
+    color: var(--primary-text-color);
+    border-color: rgba(68,138,255,0.7);
+    border-top-color: var(--divider-color);
+    box-shadow: 0 3px 2px 0 rgba(68,138,255,0.5);
+}
+
+.message__trigger--close {
+    height: 24px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 24px;
+}
+
+.message__trigger--close:hover svg {
+    fill: var(--accent-color);
 }
 
 .message__details {
@@ -54,6 +97,10 @@
     width: 100%;
 }
 
+.message__body p {
+    margin: 0 auto 1rem;
+}
+
 .message__tags {
     display: flex;
     flex: 1 0 100%;
@@ -70,6 +117,17 @@
 
 
 @media screen and (min-width: 40rem) {
+    .message__trigger--close {
+        height: 18px;
+        right: 5px;
+        top: 9px;
+        width: 18px;
+    }
+
+    .message__trigger {
+        padding-top: 1.5rem;
+    }
+
     .message__details .sender {
         font-size: 1.2rem;
     }
@@ -77,7 +135,7 @@
     .message__details time {
         font-size: 1rem;
     }
-    
+
     .message__intro {
         flex-basis: calc(100% - 18rem);
         line-height: 1.2;

@@ -1,36 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 :root {
-  --primary: #FF5252;
-  --secondary: #FFCDD2;
-  --accent-color: #448AFF;
-  --quarternary: #F7C842;
-  --primary-grayscale: #343537;
-  --secondary-grayscale: #55585D;
-  --white: #fff;
-  --off-white: #FCFDFD;
+    --primary: #FF5252;
+    --secondary: #FFCDD2;
+    --accent-color: #448AFF;
+    --quarternary: #F7C842;
+    --primary-grayscale: #343537;
+    --secondary-grayscale: #55585D;
+    --tertiary-grayscale: #f5f7f7;
+    --white: #fff;
+    --off-white: #FCFDFD;
 
-  --primary-text-color:   #212121;
-  --secondary-text-color: #757575;
-  --divider-color:        #BDBDBD;
+    --primary-text-color:   #212121;
+    --secondary-text-color: #757575;
+    --divider-color:        #BDBDBD;
 
-  --box-shadow: var(--divider-color);
-  --border-default: var(--divider-color);
-  --inverse-border: var(--primary);
-  --hover-color: var(--accent-color);
+    --box-shadow: var(--divider-color);
+    --border-default: var(--divider-color);
+    --inverse-border: var(--primary);
+    --hover-color: var(--accent-color);
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  color: var(--primary-text-color);
-  font-family: 'Roboto', Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
+    color: var(--primary-text-color);
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2, h3, h4 {
@@ -58,18 +59,19 @@ h4 {
 
 p {
     margin-bottom: 1.3rem;
+    line-height: 1.5;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: var(--hover-color);
+    color: var(--hover-color);
 }
 
 button {
-  transition: all 90ms ease-in;
+    transition: all 90ms ease-in;
 }
