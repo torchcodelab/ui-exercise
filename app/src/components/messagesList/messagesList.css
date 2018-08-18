@@ -44,7 +44,7 @@
     box-shadow: 0 3px 2px 0 rgba(68,138,255,0.5);
 }
 
-.message__trigger--close {
+.message__trigger-icon {
     height: 24px;
     position: absolute;
     right: 16px;
@@ -52,7 +52,7 @@
     width: 24px;
 }
 
-.message__trigger--close:hover svg {
+.message__trigger-icon:hover svg {
     fill: var(--accent-color);
 }
 
@@ -79,9 +79,6 @@
     font-weight: bold;
     line-height: 1.2;
     margin: 0.25rem auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: 100%;
 }
 
@@ -108,10 +105,11 @@
 }
 
 .message__tags .tag {
-    color: var(--accent-color);
+    color: var(--quarternary);
     flex: 0 1 5%;
     flex-wrap: wrap;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: bold;
     text-transform: uppercase;
     padding: 0 0.5rem 0 0;
 }
@@ -122,8 +120,22 @@
     width: 18px;
 }
 
+.message__delete-icon {
+    bottom: 8px;
+    height: 24px;
+    position: absolute;
+    right: 4px;
+    width: 24px;
+}
+
+.message__delete-icon svg {
+    fill: var(--accent-color);
+    height: 100%;
+    width: 100%;
+}
+
 @media screen and (min-width: 40rem) {
-    .message__trigger--close {
+    .message__trigger-icon {
         height: 18px;
         right: 5px;
         top: 9px;
@@ -132,6 +144,7 @@
 
     .message__trigger {
         padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 
     .message__details .sender {
@@ -140,6 +153,12 @@
 
     .message__details time {
         font-size: 1rem;
+    }
+
+    .message__subject {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .message__intro {

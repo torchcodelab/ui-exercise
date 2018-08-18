@@ -25,7 +25,7 @@
     align-items: center;
     display: flex;
     font-size: 1em;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin: 0;
 }
 
@@ -33,10 +33,6 @@
     .app-header {
         font-size: 32px;
         padding: 1rem 1rem 0.65rem;
-    }
-
-    .app-header__title {
-        justify-content: flex-start;
     }
 }
 
