@@ -24,20 +24,18 @@ export default class MessagesList extends Component {
         this.state = {
             messages: [],
             messageBody: '',
-            showMessage: false
+            showMessage: false,
+            firstRun: true
         };
     }
 
     componentDidMount() {
         getEmail().then((response) => {
             this.setState({
-                messages: response.messages
+                messages: response.messages,
+                firstRun: false
             });
         });
-    }
-
-    componentWillReceiveProps(newProps) {
-        console.log("new props are", newProps);
     }
 
     toggleMessageView = (index) => {
@@ -60,10 +58,10 @@ export default class MessagesList extends Component {
     };
 
     render() {
-        const { messages, showMessage} = this.state;
+        const { messages, firstRun, showMessage} = this.state;
         return (
             <ul className="messages__list">
-                {messages.length === 0 &&
+                {messages.length === 0 && firstRun === false &&
                     <li className="message inbox-zero">
                        <Celebration>
                            <p>Achievement Unlocked!!</p>

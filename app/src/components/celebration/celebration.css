@@ -11,13 +11,12 @@
 }
 
 .celebration__icon {
-    height: 100%;
-    max-height: 20rem;
+    height: 20rem;
 }
 
 .celebration__icon svg {
     fill: var(--accent-color);
-    height: auto;
+    height:  100%;
     width: 100%;
 }
 
