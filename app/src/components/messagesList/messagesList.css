@@ -102,6 +102,7 @@
 }
 
 .message__tags {
+    align-items: center;
     display: flex;
     flex: 1 0 100%;
 }
@@ -115,6 +116,11 @@
     padding: 0 0.5rem 0 0;
 }
 
+.message__tags .icon--tag {
+    height: 18px;
+    margin-right: 6px;
+    width: 18px;
+}
 
 @media screen and (min-width: 40rem) {
     .message__trigger--close {
