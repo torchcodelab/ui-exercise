@@ -1,0 +1,37 @@
+.wrapper--tags .title--sidebar {
+    margin: 0 0 0.5rem;
+}
+
+.tag__list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tag {
+    align-items: center;
+    color: var(--quarternary);
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 0 0.5rem 0 0;
+    width: auto;
+}
+
+.icon--tag {
+    display: inline-block;
+    height: 18px;
+    margin-right: 6px;
+    width: 18px;
+}
+
+.tag__list p {
+    color: var(--primary-text-color);
+    margin: 0;
+}

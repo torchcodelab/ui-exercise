@@ -8,25 +8,26 @@
 }
 
 /* Start global app styles */
-
 header,
 footer,
 section,
 main {
     display: block;
+    padding: 0.5rem 1rem;
     width: 100%;
-}
-
-main {
-    height: 100vh;
 }
 
 .wrapper {
-    padding: 1rem;
     position: relative;
     margin: 0 auto;
-    max-width: 90rem;
+    max-width: 75rem;
     width: 100%;
+}
+
+.wrapper--flex {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
 }
 
 .icon {
@@ -41,4 +42,13 @@ main {
 
 .icon svg {
     transition: all 90ms ease-in;
+}
+
+@media screen and (min-width: 40rem) {
+    header,
+    footer,
+    section,
+    main {
+        padding: 1rem;
+    }
 }

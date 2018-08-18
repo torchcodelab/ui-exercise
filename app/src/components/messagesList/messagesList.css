@@ -1,16 +1,12 @@
-.messages__list {
-    max-width: 75rem;
-    padding: 1rem 0.5rem;
-}
-
 .messages__list,
 .message__tags {
     list-style: none;
     margin: 0 auto;
+    padding: 0;
 }
 
-.message__tags {
-    padding: 0;
+.messages__list {
+    width: 100%;
 }
 
 .message {
@@ -75,7 +71,7 @@
 }
 
 .message__subject {
-    flex: 1 0 18rem;
+    flex: 1 1 18rem;
     font-weight: bold;
     line-height: 1.2;
     margin: 0.25rem auto;
@@ -96,28 +92,6 @@
 
 .message__body p {
     margin: 0 auto 1rem;
-}
-
-.message__tags {
-    align-items: center;
-    display: flex;
-    flex: 1 0 100%;
-}
-
-.message__tags .tag {
-    color: var(--quarternary);
-    flex: 0 1 5%;
-    flex-wrap: wrap;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 0 0.5rem 0 0;
-}
-
-.message__tags .icon--tag {
-    height: 18px;
-    margin-right: 6px;
-    width: 18px;
 }
 
 .message__delete-icon {

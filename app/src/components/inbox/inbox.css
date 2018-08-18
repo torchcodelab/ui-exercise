@@ -1,0 +1,22 @@
+.inbox .title--page {
+    margin: 0 auto;
+    padding: 1rem 1rem 0;
+}
+
+.inbox main {
+    display: flex;
+    flex: 1 1 49rem;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 20rem;
+}
+
+.inbox .sidebar {
+    flex: 1 1 15rem;
+    width: 15rem;
+}
+
+.inbox .wrapper--flex {
+    flex-direction: row-reverse;
+}

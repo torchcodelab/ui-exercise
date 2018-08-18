@@ -4,7 +4,6 @@
     color: var(--white);
     font-size: 18px;
     line-height: 1;
-    padding: 1rem;
     width: 100%;
 }
 
@@ -32,7 +31,6 @@
 @media screen and (min-width: 40rem) {
     .app-header {
         font-size: 32px;
-        padding: 1rem 1rem 0.65rem;
     }
 }
 

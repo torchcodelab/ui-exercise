@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Header from "./components/header";
-import Footer from "./components/footer";
-import MessagesList from "./components/messagesList";
+import Header from './components/header'
+import Footer from './components/footer'
+import Inbox from './components/inbox'
 
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-          <Header/>
-          <main>
-            <MessagesList/>
-          </main>
-          <Footer/>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Header/>
+                <Inbox/>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;
